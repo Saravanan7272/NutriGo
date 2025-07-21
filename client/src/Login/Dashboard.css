@@ -1,0 +1,36 @@
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-warning {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-secondary {
+  background-color: #555;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.message.success {
+  color: green;
+  font-weight: bold;
+}
+
+.message.error {
+  color: red;
+  font-weight: bold;
+}

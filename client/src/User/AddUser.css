@@ -1,0 +1,207 @@
+.add-user-container {
+  --primary: #6C3483;
+  --secondary: #2C3E50;
+  --accent: #D4AF37;
+  --light: #F8F9FA;
+  --dark: #212529;
+  --gray: #6C757D;
+  --light-gray: #DDE2E6;
+  --success: #28A745;
+  --danger: #E63946;
+  --text-dark: #333333;
+  --text-light: #FFFFFF;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: linear-gradient(135deg, #ede9f7, #e3dad1);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+}
+
+.add-user-container-wrapper {
+  padding-top: 80px;
+}
+
+.add-user-container h2 {
+  color: var(--primary);
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.add-user-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.add-user-form input,
+.add-user-form select {
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--light-gray);
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.add-user-form input:focus,
+.add-user-form select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(108, 52, 131, 0.2);
+}
+
+.avatar-selection {
+  margin: 1rem 0;
+}
+
+.avatar-selection p {
+  color: var(--secondary);
+  margin-bottom: 0.8rem;
+  font-weight: 500;
+}
+
+.avatar-grid {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.avatar-option {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 3px solid transparent;
+}
+
+.avatar-option:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.avatar-option.selected {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--primary);
+}
+
+.add-user-form button {
+  background-color: var(--primary);
+  color: var(--text-light);
+  padding: 0.8rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.add-user-form button:hover {
+  background-color: var(--secondary);
+  transform: translateY(-2px);
+}
+
+.add-user-form button:active {
+  transform: translateY(0);
+}
+
+.message {
+  margin-top: 1.5rem;
+  padding: 0.8rem;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.message.success {
+  background-color: rgba(40, 167, 69, 0.1);
+  color: var(--success);
+  border: 1px solid var(--success);
+}
+
+.message.error {
+  background-color: rgba(230, 57, 70, 0.1);
+  color: var(--danger);
+  border: 1px solid var(--danger);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .add-user-container {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+
+  .avatar-option {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+@media (max-width: 480px) {
+  .add-user-container {
+    padding: 1rem;
+  }
+
+  .avatar-option {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+/* Add to your existing CSS */
+.role-select {
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--light-gray);
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: var(--text-light);
+  color: var(--text-dark);
+  cursor: pointer;
+}
+
+.role-select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(108, 52, 131, 0.2);
+}
+
+/* Add smooth transitions */
+.add-user-form * {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Loading state for button */
+.add-user-form button.loading {
+  position: relative;
+  color: transparent;
+}
+
+.add-user-form button.loading::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top-color: var(--text-light);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}

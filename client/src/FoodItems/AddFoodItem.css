@@ -1,0 +1,392 @@
+.food-item-formContainer {
+  --primary: #6C3483;
+  --primary-light: #9B59B6;
+  --secondary: #2C3E50;
+  --accent: #D4AF37;
+  --light: #F8F9FA;
+  --dark: #212529;
+  --gray: #6C757D;
+  --light-gray: #DEE2E6;
+  --lighter-gray: #F1F3F5;
+  --success: #28A745;
+  --danger: #E63946;
+  --text-dark: #333333;
+  --text-light: #FFFFFF;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+.food-item-formContainer-wrapper {
+  padding-top: 80px;
+}
+
+.food-item-formContainer {
+  background: linear-gradient(135deg, #ede9f7, #e3dad1) !important;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-dark);
+  max-width: 850px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: var(--transition);
+}
+
+.food-item-formContainer:hover {
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+.food-item-formTitle {
+  color: var(--primary);
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.9rem;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 0.8rem;
+}
+
+.food-item-formTitle::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+.food-item-foodItemForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.food-item-input-icon-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.food-item-input-icon-group svg {
+  position: absolute;
+  left: 12px;
+  color: var(--gray);
+  font-size: 1rem;
+}
+
+.food-item-input-icon-group input,
+.food-item-input-icon-group textarea {
+  width: 100%;
+  padding: 0.75rem 0.75rem 0.75rem 38px;
+  border: 1px solid var(--light-gray);
+  border-radius: 8px;
+  background-color: var(--lighter-gray);
+  font-size: 0.95rem;
+  transition: var(--transition);
+}
+
+.food-item-input-icon-group input:focus,
+.food-item-input-icon-group textarea:focus {
+  outline: none;
+  border-color: var(--primary-light);
+  background-color: white;
+  box-shadow: 0 0 0 2px rgba(108, 52, 131, 0.15);
+}
+
+.food-item-input-icon-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Category Section */
+.food-item-category-section {
+  background-color: var(--lighter-gray);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.food-item-category-section label {
+  display: block;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+  color: var(--secondary);
+}
+
+.food-item-category-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.food-item-radio-label {
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  border: 1px solid var(--light-gray);
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: var(--transition);
+}
+
+.food-item-radio-label:hover {
+  border-color: var(--primary-light);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
+}
+
+.food-item-radio-label input {
+  margin-right: 0.5rem;
+}
+
+/* Checkbox Styles */
+.food-item-checkbox-group {
+  margin: 0.8rem 0;
+}
+
+.food-item-checkbox-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  user-select: none;
+  font-size: 0.95rem;
+}
+
+.food-item-checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.food-item-checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 22px;
+  width: 22px;
+  background-color: var(--lighter-gray);
+  border-radius: 6px;
+  transition: var(--transition);
+  border: 1px solid var(--light-gray);
+}
+
+.food-item-checkbox-container:hover input~.food-item-checkmark {
+  background-color: #e6e6e6;
+}
+
+.food-item-checkbox-container input:checked~.food-item-checkmark {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.food-item-checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.food-item-checkbox-container input:checked~.food-item-checkmark:after {
+  display: block;
+}
+
+.food-item-checkbox-container .food-item-checkmark:after {
+  left: 7px;
+  top: 3px;
+  width: 6px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* Customizations Section */
+.food-item-customizations-section {
+  margin-top: 1.5rem;
+}
+
+.food-item-customizations-section label {
+  display: block;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: var(--secondary);
+  font-size: 1.1rem;
+}
+
+.food-item-customization-card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--light-gray);
+}
+
+.food-item-customization-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.food-item-customization-header .food-item-input-icon-group {
+  flex: 1;
+}
+
+.food-item-remove-btn {
+  background: var(--danger);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.food-item-remove-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: var(--gray);
+}
+
+.food-item-remove-btn:not(:disabled):hover {
+  background: #c82333;
+  transform: scale(1.05);
+}
+
+.food-item-options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.food-item-option-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.food-item-option-item .food-item-input-icon-group {
+  flex: 1;
+}
+
+.food-item-add-option-btn,
+.food-item-add-customization-btn {
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: var(--transition);
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.food-item-add-option-btn:hover,
+.food-item-add-customization-btn:hover {
+  background: var(--primary-light);
+  transform: translateY(-1px);
+}
+
+.food-item-add-customization-btn {
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 1rem;
+}
+
+/* Submit Button */
+.food-item-submit-btn {
+  background-color: var(--primary);
+  color: white;
+  padding: 0.9rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: var(--transition);
+  letter-spacing: 0.5px;
+}
+
+.food-item-submit-btn:hover {
+  background-color: var(--primary-light);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Message Display */
+.food-item-message {
+  padding: 0.8rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.food-item-message.food-item-success {
+  background-color: rgba(40, 167, 69, 0.1);
+  color: var(--success);
+  border: 1px solid var(--success);
+}
+
+.food-item-message.food-item-error {
+  background-color: rgba(230, 57, 70, 0.1);
+  color: var(--danger);
+  border: 1px solid var(--danger);
+}
+
+.food-item-error {
+  border-color: var(--danger);
+}
+
+.food-item-error-text {
+  font-size: 0.8rem;
+  color: var(--danger);
+  margin-top: -0.5rem;
+  margin-bottom: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .food-item-formContainer {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+
+  .food-item-formTitle {
+    font-size: 1.5rem;
+  }
+
+  .food-item-category-options {
+    flex-direction: column;
+  }
+
+  .food-item-option-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .food-item-option-item .food-item-remove-btn {
+    margin-top: 0.3rem;
+    align-self: flex-end;
+  }
+}

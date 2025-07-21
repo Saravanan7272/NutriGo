@@ -1,0 +1,160 @@
+/* AboutPage.css */
+.about-page {
+  --primary: #2ECC71;
+  --dark: #2C3E50;
+  --light: #ECF0F1;
+  --accent: #E74C3C;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding-top: 100px;
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.about-hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+  background-size: cover;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+  margin-bottom: 40px;
+}
+
+.about-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.about-hero p {
+  font-size: 1.5rem;
+  font-weight: 500px;
+  color: white;
+}
+
+.features-section {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 0 20px;
+  margin-bottom: 50px;
+}
+
+.feature-card {
+  width: 30%;
+  min-width: 250px;
+  text-align: center;
+  padding: 30px 20px;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+}
+
+.feature-card .icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.why-us {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: var(--light);
+  margin-bottom: 50px;
+}
+
+.why-us h2 {
+  font-size: 2.5rem;
+  color: var(--dark);
+  margin-bottom: 40px;
+}
+
+.benefits-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.benefit {
+  width: 300px;
+  padding: 20px;
+}
+
+.learn-more {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.learn-more:hover {
+  background-color: #27AE60;
+  transform: scale(1.05);
+}
+
+.reviews-section {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.reviews-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: var(--dark);
+}
+
+.reviews-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.review-card {
+  width: 300px;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  background-color: white;
+}
+
+.stars {
+  color: #F1C40F;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.review-text {
+  font-style: italic;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.reviewer {
+  font-weight: bold;
+  color: var(--dark);
+}
+
+@media (max-width: 768px) {
+  .feature-card {
+    width: 100%;
+  }
+
+  .about-hero h1 {
+    font-size: 2rem;
+  }
+}

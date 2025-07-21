@@ -1,0 +1,196 @@
+.favorites-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  min-height: calc(100vh - 120px);
+  background-color: #fafafa;
+  font-family: 'Inter', sans-serif;
+  padding-top: 80px;
+}
+
+.favorites-page h1 {
+  font-size: 2.75rem;
+  margin-bottom: 2.5rem;
+  color: #2d3436;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.favorite-section {
+  margin-bottom: 4rem;
+}
+
+.favorite-section h2 {
+  font-size: 2rem;
+  color: #e17055;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #fdcb6e;
+  font-weight: 600;
+}
+
+
+.no-favorites {
+  text-align: center;
+  font-size: 1.25rem;
+  color: #636e72;
+  padding: 2rem;
+  background-color: #f1f2f6;
+  border-radius: 10px;
+  font-style: italic;
+}
+
+
+.favorites-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+
+.favorite-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.favorite-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+
+.card-image {
+  height: 190px;
+  background-size: cover;
+  background-position: center;
+}
+
+
+.card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-body h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.6rem;
+  color: #2d3436;
+  font-weight: 600;
+}
+
+.card-body p {
+  color: #636e72;
+  font-size: 0.95rem;
+  margin-bottom: 0.4rem;
+}
+
+.price {
+  font-weight: 700;
+  color: #e17055;
+  font-size: 1.2rem;
+  margin: 0.75rem 0;
+}
+
+
+.card-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+  gap: 0.75rem;
+}
+
+.view-btn,
+.remove-btn {
+  flex: 1;
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+
+.view-btn {
+  background-color: #0984e3;
+  color: #ffffff;
+}
+
+.view-btn:hover {
+  background-color: #0767b1;
+}
+
+.remove-btn {
+  background-color: #ff7675;
+  color: #ffffff;
+}
+
+.remove-btn:hover {
+  background-color: #d63031;
+}
+
+
+.back-to-home {
+  display: inline-block;
+  margin-top: 2.5rem;
+  padding: 0.8rem 1.8rem;
+  background-color: #00b894;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background-color 0.25s ease;
+}
+
+.back-to-home:hover {
+  background-color: #009d7a;
+}
+
+
+@media (max-width: 768px) {
+  .favorites-page {
+    padding: 2rem 1rem;
+  }
+
+  .favorites-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .favorites-page h1 {
+    font-size: 2.2rem;
+  }
+
+  .favorite-section h2 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .favorites-page h1 {
+    font-size: 2rem;
+  }
+
+  .favorites-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card-actions {
+    flex-direction: column;
+  }
+
+  .view-btn,
+  .remove-btn {
+    width: 100%;
+  }
+}
