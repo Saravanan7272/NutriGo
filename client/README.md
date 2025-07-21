@@ -1,4 +1,4 @@
-# Restaurant Food Ordering System - NutriGo
+# NutriGo - Restaurant Food Ordering System
 
 A full-stack MERN (MongoDB, Express.js, React, Node.js) application for restaurant food ordering and management. The system allows customers to browse restaurants, order food, and restaurants to manage their menus and orders.
 
