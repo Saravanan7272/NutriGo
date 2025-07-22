@@ -11,7 +11,6 @@ require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 8000;
-//const DB_URL = 'mongodb+srv://Saravanan:saro@cluster0.ec6qgv8.mongodb.net/restaurantApp?retryWrites=true&w=majority&tls=true';
 const DB_URL =process.env.MONGO_URI;
 app.use(cors());
 app.use(express.json());
