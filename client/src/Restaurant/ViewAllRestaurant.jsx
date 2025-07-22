@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import { CSVLink } from 'react-csv';
 import './ViewRestaurants.css';
-
+import { API_ENDPOINTS } from '../config/api.config';
 function ViewAllRestaurant() {
   const [restaurants, setRestaurants] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -14,7 +14,7 @@ function ViewAllRestaurant() {
   useEffect(() => {
     const fetchRestaurants = async () => {
       try {
-        const response = await fetch('http://localhost:8000/api/restaurants');
+        const response = await fetch(API_ENDPOINTS.RESTAURANTS);
         if (!response.ok) throw new Error('Failed to fetch restaurants');
         const data = await response.json();
         setRestaurants(data);

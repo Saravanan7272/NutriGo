@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FaUtensils, FaList, FaAlignLeft, FaRupeeSign, FaImage, FaCheck, FaTimes, FaPlus, FaStore } from 'react-icons/fa';
 import './AddFoodItem.css';
-
+import { API_ENDPOINTS} from '../config/api.config';
 function AddFoodItem() {
   const [formData, setFormData] = useState({
     restaurantId: '',
@@ -95,7 +95,7 @@ function AddFoodItem() {
     };
 
     try {
-      const res = await fetch('http://localhost:8000/api/add-food-item', {
+      const res = await fetch(`${API_ENDPOINTS.ADD_FOOD_ITEM}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),

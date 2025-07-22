@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './CartPage.css';
 import { handlePayment } from '../utils/handlePayment';
+import { API_ENDPOINTS} from '../config/api.config';
 
 const CartPage = ({ cart, setCart, popularItems, setOrders }) => {
   const [deliveryInfo, setDeliveryInfo] = useState({
@@ -85,7 +86,7 @@ const CartPage = ({ cart, setCart, popularItems, setOrders }) => {
     };
 
     try {
-      const response = await fetch('http://localhost:8000/api/orders', {
+      const response = await fetch(API_ENDPOINTS.ORDERS, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newOrder)

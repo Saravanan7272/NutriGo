@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import { CSVLink } from 'react-csv';
 import './ViewUsers.css';
+import { API_ENDPOINTS,API_BASE_URL } from '../config/api.config';
 
 function ViewUsers() {
   const [users, setUsers] = useState([]);
@@ -14,7 +15,7 @@ function ViewUsers() {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await fetch('http://localhost:8000/api/View-all-users');
+        const response = await fetch(`${API_BASE_URL}/View-all-users`);
         if (!response.ok) throw new Error('Failed to fetch users');
         const data = await response.json();
         setUsers(data);

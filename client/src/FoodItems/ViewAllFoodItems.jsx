@@ -2,7 +2,7 @@ import React, { useEffect, useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CSVLink } from 'react-csv';
 import './ViewAllFoodItems.css';
-
+import { API_ENDPOINTS} from '../config/api.config';
 function ViewAllFoodItems() {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -16,7 +16,7 @@ function ViewAllFoodItems() {
   useEffect(() => {
     const fetchItems = async () => {
       try {
-        const response = await fetch('http://localhost:8000/api/food-items');
+        const response = await fetch(API_ENDPOINTS.FOOD_ITEMS);
         if (!response.ok) throw new Error('Failed to fetch food items');
         const data = await response.json();
         setItems(data);
@@ -34,7 +34,7 @@ function ViewAllFoodItems() {
   const handleDelete = async (itemId) => {
     if (window.confirm('Are you sure you want to delete this food item?')) {
       try {
-        const response = await fetch(`http://localhost:8000/api/food-items/${itemId}`, {
+        const response = await fetch(`${API_ENDPOINTS.FOOD_ITEMS}/${itemId}`, {
           method: 'DELETE'
         });
 

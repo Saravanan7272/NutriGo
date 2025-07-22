@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './AddUser.css';
-
+import { API_ENDPOINTS} from '../config/api.config';
 function AddUser() {
   const [formData, setFormData] = useState({
     name: '',
@@ -38,7 +38,7 @@ function AddUser() {
     };
 
     try {
-      const res = await fetch('http://localhost:8000/api/add-user', {
+      const res = await fetch(`${API_ENDPOINTS.USER_ADD}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)

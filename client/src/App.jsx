@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import ScrollToTop from './ScrollToTop';
 import Navbar from './Navbar';
+import { API_ENDPOINTS } from './config/api.config';
 import { useAuth, AuthProvider } from './Login/auth/AuthProvider';
 import ProtectedRoute from './Login/ProtectedRoute';
 import Profile_Info from './Login/Profile_Info';
@@ -53,8 +54,8 @@ function AppContent() {
       try {
         setLoading(true);
         const [itemsRes, restaurantsRes] = await Promise.all([
-          fetch('http://localhost:8000/api/food-items'),
-          fetch('http://localhost:8000/api/restaurants'),
+          fetch(API_ENDPOINTS.FOOD_ITEMS),
+          fetch(API_ENDPOINTS.RESTAURANTS),
         ]);
         const [itemsData, restaurantsData] = await Promise.all([
           itemsRes.json(),
@@ -81,7 +82,7 @@ function AppContent() {
       console.log(user);
       if (user?.email) {
         try {
-          const res = await fetch(`http://localhost:8000/api/users/get-user-type?email=${user.email}`);
+          const res = await fetch(`${API_ENDPOINTS.USERS}/get-user-type?email=${user.email}`);
           const data = await res.json();
           setUserType(data.userRole);
           setUserName(data.name);

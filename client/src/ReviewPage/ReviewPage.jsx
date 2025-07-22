@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import './ReviewPage.css';
+import { API_ENDPOINTS} from '../config/api.config';
 
 const ReviewPage = () => {
   const { orderId } = useParams();
@@ -18,13 +19,13 @@ const ReviewPage = () => {
   useEffect(() => {
     const fetchOrderDetails = async () => {
       try {
-        const orderRes = await fetch(`http://localhost:8000/api/order/${orderId}`);
+        const orderRes = await fetch(`${API_ENDPOINTS.ORDER}/${orderId}`);
         if (!orderRes.ok) throw new Error(`Failed to fetch order: ${orderRes.status}`);
         const orderData = await orderRes.json();
         setOrderDetails(orderData);
 
         if (orderData.userId) {
-          const userRes = await fetch(`http://localhost:8000/api/users/${orderData.userId}`);
+          const userRes = await fetch(`${API_ENDPOINTS.USERS}/${orderData.userId}`);
           if (userRes.ok) {
             const userData = await userRes.json();
             setUserDetails(userData);
@@ -32,7 +33,7 @@ const ReviewPage = () => {
         }
 
         if (orderData.restaurantId) {
-          const restaurantRes = await fetch(`http://localhost:8000/api/restaurants/${orderData.restaurantId}`);
+          const restaurantRes = await fetch(`${API_ENDPOINTS.RESTAURANTS}/${orderData.restaurantId}`);
           if (restaurantRes.ok) {
             const restaurantData = await restaurantRes.json();
             setRestaurantDetails(restaurantData);
@@ -62,7 +63,7 @@ const ReviewPage = () => {
     setIsSubmitting(true);
 
     try {
-      const res = await fetch('http://localhost:8000/api/reviews', {
+      const res = await fetch(API_ENDPOINTS.REVIEWS, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

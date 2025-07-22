@@ -4,6 +4,7 @@ import { FaHeart, FaRegHeart, FaStar, FaClock, FaUtensils, FaLeaf, FaFire } from
 import { IoLocationSharp } from 'react-icons/io5';
 import '../assets/style/Homepage.css';
 import './ViewRestaurantDetails.css';
+import { API_ENDPOINTS } from '../config/api.config';
 
 function ViewRestaurantDetails({
   cart,
@@ -28,9 +29,10 @@ function ViewRestaurantDetails({
     async function fetchData() {
       try {
         const [resRes, foodRes] = await Promise.all([
-          fetch(`http://localhost:8000/api/restaurants/${id}`),
-          fetch(`http://localhost:8000/api/food-items-by-restaurant?restaurantId=${id}`)
+          fetch(`${API_ENDPOINTS.RESTAURANTS}/${id}`),
+          fetch(`${API_ENDPOINTS.FOOD_ITEMS}-by-restaurant?restaurantId=${id}`)
         ]);
+        
 
         if (!resRes.ok) throw new Error('Failed to fetch restaurant');
         if (!foodRes.ok) throw new Error('Failed to fetch menu items');

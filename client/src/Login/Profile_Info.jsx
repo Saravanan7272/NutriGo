@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from './auth/AuthProvider';
 import './profile.css';
-
+import { API_ENDPOINTS} from '../config/api.config';
 function Profile_Info() {
   const { currentUser, completeProfile } = useAuth();
   const navigate = useNavigate();
@@ -98,7 +98,7 @@ function Profile_Info() {
     };
 
     try {
-      const res = await fetch('http://localhost:8000/api/add-user', {
+      const res = await fetch(`${API_ENDPOINTS.USER_ADD}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)

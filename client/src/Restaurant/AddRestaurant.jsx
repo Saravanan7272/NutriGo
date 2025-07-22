@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './AddRestaurant.css';
 import { FaUser, FaLock, FaMapMarkerAlt, FaImage, FaClock, FaRupeeSign, FaStore } from 'react-icons/fa';
 const cuisineOptions = ['Indian', 'Chinese', 'Italian', 'Mexican', 'Thai', 'French'];
-
+import { API_ENDPOINTS} from '../config/api.config';
 function AddRestaurant() {
   const [formData, setFormData] = useState({
     name: '',
@@ -88,7 +88,7 @@ function AddRestaurant() {
     };
 
     try {
-      const res = await fetch('http://localhost:8000/api/add-restaurant', {
+      const res = await fetch(`${API_ENDPOINTS.RESTAURANT_ADD}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
